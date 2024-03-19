@@ -8,7 +8,7 @@ class EanHelper
 
         let calculatedChecksum:number = this.calculateChecksum(rawEan);
 
-        return true;
+        return calculatedChecksum === checksum;
     }
 
     private static calculateChecksum(rawEan:string):number
@@ -48,3 +48,5 @@ class EanHelper
         return rounded - inputNumber;
     }
 }
+
+export default EanHelper;
