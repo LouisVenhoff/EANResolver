@@ -1,4 +1,5 @@
 import axios from "axios";
+import { MinimalProduct } from "../../types/eanResolverTypes";
 
 class ApiController{
 
@@ -12,11 +13,16 @@ class ApiController{
     }
 
 
-    public async resolveEan():Promise<string> {
-        let response:any = await axios.get("asdssdfsd", {});
+    public async resolveEan(ean:string):Promise<MinimalProduct> {
+        let response:any = await axios.get(`http://${this.host}:${this.port}/api/sendCode/${ean}`, {});
 
-        return new Promise((resolve, reject) => {resolve(response.toString())});
+        return new Promise((resolve, reject) => {
+            resolve(this.convertRawToMP(response.data));
+        });
+    }
 
+    private convertRawToMP(data:any):MinimalProduct{
+        return {error: data.error, name: data.name, ean: data.code}
     }
 
     
