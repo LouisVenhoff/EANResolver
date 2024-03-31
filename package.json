@@ -1,6 +1,6 @@
 {
   "name": "eanresolver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Package for validating and resolving ean product codes",
   "main": "index.js",
   "scripts": {

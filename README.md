@@ -11,6 +11,8 @@ With it you can validate EAN codes, and fetch the products name behind the code.
 
 `V1.0.0`: Initial Version
 
+`V1.1.0`: Minor bug fixes
+
 
 ### License
 
