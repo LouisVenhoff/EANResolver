@@ -25,7 +25,7 @@ This function retrieves information about a product based on its EAN (European A
 
 - `ean`: The EAN to be checked as a string.
 
-- Return Type: Promise<MinimalProduct>
+- Return Type: `Promise<MinimalProduct>`
 
 **Example:**
 
