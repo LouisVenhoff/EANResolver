@@ -12,6 +12,10 @@ With it you can validate EAN codes, and fetch the products name behind the code.
 `V1.0.0`: Initial Version
 
 
+### License
+
+Apache License 2.0
+
 ### Functions
 
 #### `checkEan(ean: string): boolean`
