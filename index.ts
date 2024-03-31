@@ -8,7 +8,7 @@ export const checkEan = (ean:string) =>{
     return EanHelper.validateEAN(ean);
 }
 
-export const getProduct = async (ean:string):Promise<any> => {
+export const getProduct = async (ean:string):Promise<MinimalProduct> => {
     let product:MinimalProduct = await api.resolveEan(ean);
 
     return new Promise((resolve, reject) => {resolve(product)});
@@ -16,10 +16,5 @@ export const getProduct = async (ean:string):Promise<any> => {
 }
 
 
-const testFuction = async () => {
-    console.log(await getProduct("4056489579113"));
-}
-
-testFuction();
 
 

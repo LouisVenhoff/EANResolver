@@ -1,6 +1,7 @@
 import axios from "axios";
 import { MinimalProduct } from "../../types/eanResolverTypes";
-
+import EanHelper from "../helpers/eanHelper";
+import { EanError } from "../../enums/eanError";
 class ApiController{
 
     private host:string;
@@ -14,9 +15,18 @@ class ApiController{
 
 
     public async resolveEan(ean:string):Promise<MinimalProduct> {
-        let response:any = await axios.get(`http://${this.host}:${this.port}/api/sendCode/${ean}`, {});
+        let isValid:boolean = EanHelper.validateEAN(ean);
 
-        return new Promise((resolve, reject) => {
+    
+        return new Promise(async (resolve, reject) => {
+            
+            let response:any = await axios.get(`http://${this.host}:${this.port}/api/sendCode/${ean}`, {});
+            
+            if(!isValid){
+                resolve({error: EanError.INVALID_CHECKSUM, name:"", ean:""});
+                return;
+            }
+
             resolve(this.convertRawToMP(response.data));
         });
     }

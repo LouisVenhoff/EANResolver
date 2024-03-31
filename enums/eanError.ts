@@ -1,0 +1,8 @@
+export enum EanError {
+    OK,
+    EAN_NOT_FOUND,
+    INVALID_CHECKSUM,
+    INVALID_EAN,
+    EAN_RESERVED,
+    FETCHING_ERROR
+}
