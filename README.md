@@ -1,5 +1,17 @@
 ## EANResolver Official Documentation
 
+### Quick overview
+
+#### What is it:
+
+Leightweigt NodeJS wrapper of an EAN Product API.
+With it you can validate EAN codes, and fetch the products name behind the code.
+
+### Changelog
+
+`V1.0.0`: Initial Version
+
+
 ### Functions
 
 #### `checkEan(ean: string): boolean`
