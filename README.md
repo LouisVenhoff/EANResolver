@@ -29,9 +29,11 @@ This function checks the validity of an EAN (European Article Number) and return
 **Example:**
 
 ```typescript
-    import {checkEan} from "EANResolver";
+    import Resolver from "EANResolver";
 
-    const isValidEan = checkEan('1234567890123'); // Example EAN
+    const resolver = new Resolver();
+
+    const isValidEan = resolver.checkEan('1234567890123'); // Example EAN
     console.log(isValidEan); // Output: true or false depending on the validity of the EAN
 ```
 
@@ -48,7 +50,7 @@ This function retrieves information about a product based on its EAN (European A
 **Example:**
 
 ```typescript
-import { getProduct } from 'EANResolver';
+import Resolver from 'EANResolver';
 
 getProduct('1234567890123')
   .then(product => {
