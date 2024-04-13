@@ -2,14 +2,14 @@
   "name": "eanresolver",
   "version": "1.0.1",
   "description": "Package for validating and resolving ean product codes",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "npx tsc index.ts -outDir dist && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type":"git",
-    "url":"https://github.com/LouisVenhoff/EANResolver.git"
+    "type": "git",
+    "url": "https://github.com/LouisVenhoff/EANResolver.git"
   },
   "keywords": [
     "ean",
@@ -21,8 +21,10 @@
   "author": "Louis Venhoff",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^20.12.2",
     "axios": "^1.6.8",
     "typescript": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7"
   }
 }
