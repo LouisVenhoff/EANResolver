@@ -13,10 +13,23 @@ With it you can validate EAN codes, and fetch the products name behind the code.
 
 `V1.1.0`: Minor bug fixes
 
+`V2.0.0`: 
+  - Breaking
+    - Resolver is now a class which user has to initialize with its constructor
+  - Fix
+    - Fixed getProduct Logig
+  
+
 
 ### License
 
 Apache License 2.0
+
+### Install
+```
+npm i eanresolver
+```
+
 
 ### Functions
 
@@ -52,7 +65,9 @@ This function retrieves information about a product based on its EAN (European A
 ```typescript
 import Resolver from 'EANResolver';
 
-getProduct('1234567890123')
+const resolver = new Resolver();
+
+resolver.getProduct('1234567890123')
   .then(product => {
     console.log(product);
   })
